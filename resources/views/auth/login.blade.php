@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Halaman Login </title>
+    <title>Halaman Login | Rental Buku </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -31,6 +31,12 @@
                 <p class="login-box-msg">Sign in to start your session</p>
                 @if (session('status'))
                     <div class="alert alert-danger">
+                        {{ session('message') }}
+                    </div>
+                @endif
+
+                @if (session('success'))
+                    <div class="alert alert-success">
                         {{ session('message') }}
                     </div>
                 @endif

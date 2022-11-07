@@ -8,6 +8,11 @@ class UserController extends Controller
 {
     public function profile()
     {
-        return view('login.profile');
+        return view('auth.profile');
+    }
+
+    public function index()
+    {
+        return view('user.index');
     }
 }
