@@ -59,7 +59,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="{{ url('/') }}" class="d-block">
+                        <a href="{{ route('dashboard') }}" class="d-block">
                             {{ Auth::user()->username }}
                         </a>
                     </div>

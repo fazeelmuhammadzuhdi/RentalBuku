@@ -36,7 +36,18 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin')->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client')->name('profile');
     Route::get('books', [BookController::class, 'index'])->name('books');
+
     Route::get('users', [UserController::class, 'index'])->name('users');
+
     Route::get('categories', [CategoryController::class, 'index'])->name('categories');
+    Route::get('tambah', [CategoryController::class, 'create'])->name('tambah');
+    Route::post('simpan', [CategoryController::class, 'store'])->name('simpan');
+    Route::get('edit/{slug}', [CategoryController::class, 'edit'])->name('edit');
+    Route::put('update/{slug}', [CategoryController::class, 'update'])->name('update');
+
+    Route::delete('hapus/{id}', [CategoryController::class, 'destroy'])->name('hapus');
+
+
+
     Route::get('rent-logs', [RentLogController::class, 'index'])->name('rent.logs');
 });
