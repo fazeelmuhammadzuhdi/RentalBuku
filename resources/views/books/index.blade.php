@@ -44,6 +44,7 @@
                                 <th width="30">NO</th>
                                 <th>CODE</th>
                                 <th>TITLE</th>
+                                <th>CATEGORY</th>
                                 <th>STATUS</th>
                                 <th width="20%">Action</th>
 
@@ -55,9 +56,13 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $book->book_code }}</td>
                                     <td>{{ $book->title }}</td>
+                                    <td>
+                                        @foreach ($book->categories as $category)
+                                            {{ $category->name }}<br>
+                                        @endforeach
                                     <td>{{ $book->status }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-info">
+                                        <a href="{{ route('books.edit', $book->slug) }}" class="btn btn-info">
                                             <i class="fa fa-pencil-alt"> Edit</i>
                                         </a>
                                         <form action="#" method="POST" class="d-inline">

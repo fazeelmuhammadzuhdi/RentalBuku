@@ -36,6 +36,16 @@
                         <label for="cover">Image</label>
                         <input type="file" name="cover" id="cover" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label for="categories">Category</label>
+                        <select name="categories[]" required class="form-control select2" multiple>
+                            @foreach ($category as $categories)
+                                <option value="{{ $categories->id }}">
+                                    {{ $categories->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary btn-block">
                         Simpan
                     </button>
@@ -44,3 +54,13 @@
         </div>
     </div>
 @endsection
+
+
+@push('after-script')
+    <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
+    <script>
+        $(function() {
+            $('.select2').select2()
+        })
+    </script>
+@endpush

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -17,7 +18,10 @@ class BookController extends Controller
 
     public function create()
     {
-        return view('books.tambah');
+        $category = Category::all();
+        return view('books.tambah', [
+            'category' => $category
+        ]);
     }
 
     public function store(Request $request)
@@ -40,7 +44,13 @@ class BookController extends Controller
         $request['cover'] = $newName;
 
         $books = Book::create($request->all());
+        $books->categories()->sync($request->categories);
 
         return redirect()->route('books')->with('status', "Data Berhasil Di Simpan");
+    }
+
+    public function edit($slug)
+    {
+        //
     }
 }
