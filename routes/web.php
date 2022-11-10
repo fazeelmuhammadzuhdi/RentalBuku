@@ -35,7 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::get('logout', [AuthController::class, 'logout']);
     Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin')->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client')->name('profile');
+
     Route::get('books', [BookController::class, 'index'])->name('books');
+    Route::get('books-add', [BookController::class, 'create'])->name('books.tambah');
+    Route::post('books-add', [BookController::class, 'store'])->name('books.simpan');
 
     Route::get('users', [UserController::class, 'index'])->name('users');
 
