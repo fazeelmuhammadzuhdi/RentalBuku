@@ -1,10 +1,9 @@
 @extends('layout.main')
 
-
 @section('isi')
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title"><strong>INI HALAMAN USERS</strong></h2>
+            <h2 class="card-title"><strong>INI HALAMAN REGISTRASI USERS</strong></h2>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -23,11 +22,11 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="float-left">
-                                    <h5>Data Anggota</h5>
+                                    <h3>New Registrasi</h3>
                                 </div>
                                 <div class="float-right">
-                                    <a href="#" class="btn btn-secondary btn-sm">View Deleted Data</a>
-                                    <a href="{{ route('register.users') }}" class="btn btn-info btn-sm">Registrasi User</a>
+                                    <a href="{{ route('users') }}" class="btn btn-primary btn-sm"><i
+                                            class="fas fa-hand-paper"></i> Approved User</a>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -41,14 +40,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($user as $i => $users)
+                                        @foreach ($register as $i => $registers)
                                             <tr>
                                                 <td>{{ $i + 1 }}</td>
 
-                                                <td>{{ $users->username }}</td>
+                                                <td>{{ $registers->username }}</td>
                                                 <td>
-                                                    @if ($users->phone)
-                                                        {{ $users->phone }}
+                                                    @if ($registers->phone)
+                                                        {{ $registers->phone }}
                                                     @else
                                                         -
                                                     @endif
@@ -57,8 +56,7 @@
                                                 <td>
                                                     <a href="#" class="btn btn-sm btn-warning"><i
                                                             class="fas fa-edit"></i> Detail</a>
-                                                    <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash">
-                                                            Ban User</i></a>
+
                                                 </td>
                                             </tr>
                                         @endforeach

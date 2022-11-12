@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('/') }}dist/css/adminlte.min.css">
     <link rel="stylesheet" href="{{ asset('/') }}plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="{{ url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -134,7 +135,7 @@
     <script src="{{ asset('/') }}dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/') }}dist/js/demo.js"></script>
-    
+    <script src="{{ asset('/') }}plugins/datatables/jquery.dataTables.min.js"></script>
     @stack('after-script')
 </body>
 

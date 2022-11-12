@@ -45,6 +45,8 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('users', [UserController::class, 'index'])->name('users');
+    Route::get('register-users', [UserController::class, 'registerUser'])->name('register.users');
+
 
     Route::get('categories', [CategoryController::class, 'index'])->name('categories');
     Route::get('tambah', [CategoryController::class, 'create'])->name('tambah');
