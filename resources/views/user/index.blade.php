@@ -26,10 +26,21 @@
                                     <h5>Data Anggota</h5>
                                 </div>
                                 <div class="float-right">
-                                    <a href="#" class="btn btn-secondary btn-sm">View Deleted Data</a>
+                                    <a href="#" class="btn btn-secondary btn-sm">View
+                                        User
+                                        Detail</a>
                                     <a href="{{ route('register.users') }}" class="btn btn-info btn-sm">Registrasi User</a>
                                 </div>
                             </div>
+
+                            <div class="container mt-3">
+                                @if (session('status'))
+                                    <div class="alert alert-success">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+                            </div>
+
                             <div class="card-body">
                                 <table class="table table-striped" id="table">
                                     <thead>
@@ -55,10 +66,19 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-warning"><i
-                                                            class="fas fa-edit"></i> Detail</a>
-                                                    <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash">
-                                                            Ban User</i></a>
+                                                    <a href="{{ route('user-details', $users->slug) }}"
+                                                        class="btn btn-sm btn-warning"><i class="fas fa-edit"></i>
+                                                        Detail</a>
+                                                    <form action="{{ route('user-delete', $users->slug) }}" method="POST"
+                                                        class="d-inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger"><i
+                                                                class="fas fa-trash"
+                                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus User {{ $users->username }}')">
+                                                                Ban User</i></button>
+                                                    </form>
+
                                                 </td>
                                             </tr>
                                         @endforeach

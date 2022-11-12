@@ -46,6 +46,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('users', [UserController::class, 'index'])->name('users');
     Route::get('register-users', [UserController::class, 'registerUser'])->name('register.users');
+    Route::get('user-details/{slug}', [UserController::class, 'show'])->name('user-details');
+    Route::get('approve/{slug}', [UserController::class, 'approve'])->name('user-approve');
+    Route::delete('delete/{slug}', [UserController::class, 'destroy'])->name('user-delete');
 
 
     Route::get('categories', [CategoryController::class, 'index'])->name('categories');

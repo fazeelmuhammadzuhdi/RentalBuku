@@ -54,8 +54,9 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-warning"><i
-                                                            class="fas fa-edit"></i> Detail</a>
+                                                    <a href="{{ route('user-details', $registers->slug) }}"
+                                                        class="btn btn-sm btn-warning"><i class="fas fa-edit"></i>
+                                                        Detail</a>
 
                                                 </td>
                                             </tr>
