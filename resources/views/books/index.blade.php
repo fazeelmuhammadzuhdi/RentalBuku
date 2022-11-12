@@ -65,7 +65,8 @@
                                         <a href="{{ route('books.edit', $book->slug) }}" class="btn btn-info">
                                             <i class="fa fa-pencil-alt"> Edit</i>
                                         </a>
-                                        <form action="#" method="POST" class="d-inline">
+                                        <form action="{{ route('books.delete', $book->id) }}" method="POST"
+                                            class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger">

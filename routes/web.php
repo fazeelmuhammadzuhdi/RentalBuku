@@ -40,6 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::get('books-add', [BookController::class, 'create'])->name('books.tambah');
     Route::post('books-add', [BookController::class, 'store'])->name('books.simpan');
     Route::get('books-edit/{slug}', [BookController::class, 'edit'])->name('books.edit');
+    Route::put('books-update/{slug}', [BookController::class, 'update'])->name('books.update');
+    Route::delete('books-delete/{id}', [BookController::class, 'destroy'])->name('books.delete');
+
 
     Route::get('users', [UserController::class, 'index'])->name('users');
 
