@@ -50,6 +50,14 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('book-list') }}" class="nav-link">
+                <i class="nav-icon fas fa-angry text-red"></i>
+                <p>
+                    BookList
+                </p>
+            </a>
+        </li>
     @endif
 @else
     <li class="nav-item">

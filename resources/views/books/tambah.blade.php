@@ -33,8 +33,8 @@
                             class="form-control" required value="{{ old('title') }}">
                     </div>
                     <div class="form-group">
-                        <label for="cover">Image</label>
-                        <input type="file" name="cover" id="cover" class="form-control">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" id="image" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="categories">Category</label>

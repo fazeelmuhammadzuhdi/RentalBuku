@@ -36,10 +36,10 @@ class BookController extends Controller
         ]);
 
         $newName = '';
-        if ($request->file('cover')) {
-            $extension = $request->file('cover')->getClientOriginalExtension();
+        if ($request->file('image')) {
+            $extension = $request->file('image')->getClientOriginalExtension();
             $newName =  $request->title . '-' . now()->timestamp . '.' . $extension;
-            $request->file('cover')->storeAs('cover', $newName);
+            $request->file('image')->storeAs('cover', $newName);
         }
 
         $request['cover'] = $newName;
