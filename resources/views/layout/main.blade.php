@@ -136,6 +136,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/') }}dist/js/demo.js"></script>
     <script src="{{ asset('/') }}plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('/') }}plugins/select2/js/select2.min.js"></script>
     @stack('after-script')
 </body>
 

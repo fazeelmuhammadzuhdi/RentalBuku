@@ -41,6 +41,14 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('rental-buku') }}" class="nav-link">
+                <i class="nav-icon fas fa-angry text-red"></i>
+                <p>
+                    Book Rent
+                </p>
+            </a>
+        </li>
     @else
         <li class="nav-item">
             <a href="{{ route('profile') }}" class="nav-link">

@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RentBookController;
 use App\Http\Controllers\RentLogController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,9 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{slug}', [CategoryController::class, 'edit'])->name('edit');
         Route::put('update/{slug}', [CategoryController::class, 'update'])->name('update');
         Route::delete('hapus/{id}', [CategoryController::class, 'destroy'])->name('hapus');
+
+        Route::get('rental-buku', [RentBookController::class, 'index'])->name('rental-buku');
+        Route::post('rental-buku', [RentBookController::class, 'store'])->name('rental-book');
     });
 
 
