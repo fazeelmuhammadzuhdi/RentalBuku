@@ -61,9 +61,10 @@ Route::middleware('auth')->group(function () {
 
         Route::get('rental-buku', [RentBookController::class, 'index'])->name('rental-buku');
         Route::post('rental-buku', [RentBookController::class, 'store'])->name('rental-book');
+
+        Route::get('rent-logs', [RentLogController::class, 'index'])->name('rent.logs');
+
+        Route::get('book-return', [RentBookController::class, 'returnBook'])->name('book-return');
+        Route::post('book-return', [RentBookController::class, 'saveReturnBook'])->name('book-return-save');
     });
-
-
-
-    Route::get('rent-logs', [RentLogController::class, 'index'])->name('rent.logs');
 });

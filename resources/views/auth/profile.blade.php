@@ -16,11 +16,9 @@
                 </button>
             </div>
         </div>
-        {{-- <div class="card-body">
-            <div class="alert alert-success">
-                Halo, Selamat Datang
-            </div>
-        </div> --}}
+        <div class="card-body">
+             <x-rent-log-table :rentlog='$rent_logs' />
+        </div>
         <!-- /.card-body -->
 
         <!-- /.card-footer-->

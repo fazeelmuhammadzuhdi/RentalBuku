@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RentLog;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RentLogController extends Controller
@@ -11,7 +12,7 @@ class RentLogController extends Controller
     {
         $rentLogs = RentLog::with(['user', 'book'])->get();
         return view('rent-logs.index', [
-            'rent_logs' => $rentLogs
+            'rent_logs' => $rentLogs,
         ]);
     }
 }

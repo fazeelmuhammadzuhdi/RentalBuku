@@ -49,6 +49,22 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('book-list') }}" class="nav-link">
+                <i class="nav-icon fas fa-angry text-red"></i>
+                <p>
+                    Book List
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('book-return') }}" class="nav-link">
+                <i class="nav-icon fas fa-angry text-red"></i>
+                <p>
+                    Book Return
+                </p>
+            </a>
+        </li>
     @else
         <li class="nav-item">
             <a href="{{ route('profile') }}" class="nav-link">

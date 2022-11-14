@@ -67,6 +67,10 @@
                                     readonly>
                             </div>
                         </div>
+
+                        <div class="mt-2">
+                            <x-rent-log-table :rentlog='$rent_logs' />
+                        </div>
                     </div>
                 </div>
             </div>
