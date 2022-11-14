@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RentLog;
 use Illuminate\Http\Request;
 
 class RentLogController extends Controller
 {
     public function index()
     {
-        return view('rent-logs.index');
+        $rentLogs = RentLog::with(['user', 'book'])->get();
+        return view('rent-logs.index', [
+            'rent_logs' => $rentLogs
+        ]);
     }
 }
